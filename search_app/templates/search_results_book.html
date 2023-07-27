@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Search Book{% endblock %}
+
+{% block content %}
+<h2>Search Results</h2>
+
+{% if query %}
+    <h3>Query: {{ query }}</h3>
+{% endif %}
+
+{% if books %}
+    <ul>
+        {% for book in books %}
+            <li><a href="{% url 'book-detail' book_id=book.id %}">{{ book.title }} -
+                {% for author in book.authors.all %}
+                {{ author }}
+                {% endfor %}
+
+
+
+            </a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No books found matching the criteria.</p>
+{% endif %}
+
+{% endblock %}

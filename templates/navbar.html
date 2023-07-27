@@ -1,0 +1,12 @@
+<nav>
+    <ul>
+        <li><a href="{% url 'books-list' %}">View All Books</a></li>
+        <li><a href="{% url 'authors-list' %}">View All Authors</a></li>
+        <li><a href="{% url 'add-book' %}">Add Book</a></li>
+        <li><a href="{% url 'create_author' %}">Add Author</a></li>
+    </ul>
+    <form action="{% url 'search' %}" method="get">
+        <input type="text" name="query" placeholder="Search by book or author" required>
+        <button type="submit">Search</button>
+    </form>
+</nav>

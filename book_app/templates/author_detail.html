@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Author detail{% endblock %}
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style_detail.css' %}"> {% endblock %}
+{% block content %}
+<h2>Author: {{ author.name }}</h2>
+<h3>Books:</h3>
+<ul>
+    {% for book in books %}
+    <li>{{ book.title }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'edit_author' author_id=author.id %}">Edit author</a>
+<a href="{% url 'delete_author' author_id=author.id %}">Delete author</a>
+{% endblock %}
