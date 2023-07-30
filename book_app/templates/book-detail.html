@@ -11,7 +11,7 @@
     <li><a href="{% url 'author_detail' author_id=author.id %}">{{ author }}</a></li>
     {% endfor %}
 </ul>
-<a href="{% url 'edit_book'  book_id=book.id %}">Edit book</a>
-<a href="{% url 'delete_book' book_id=book.id %}">Delete book</a>
+<a class="btn_edit" href="{% url 'edit_book'  book_id=book.id %}">Edit book</a>
+<a  class="btn_delete" href="{% url 'delete_book' book_id=book.id %}">Delete book</a>
 
 {% endblock %}

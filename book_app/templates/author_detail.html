@@ -3,7 +3,8 @@
 
 {% block title %}Author detail{% endblock %}
 {% block link %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/style_detail.css' %}"> {% endblock %}
+
+{% endblock %}
 {% block content %}
 <h2>Author: {{ author.name }}</h2>
 <h3>Books:</h3>
@@ -12,6 +13,6 @@
     <li>{{ book.title }}</li>
     {% endfor %}
 </ul>
-<a href="{% url 'edit_author' author_id=author.id %}">Edit author</a>
-<a href="{% url 'delete_author' author_id=author.id %}">Delete author</a>
+<a class="btn_edit" href="{% url 'edit_author' author_id=author.id %}">Edit author</a>
+<a  class="btn_delete" href="{% url 'delete_author' author_id=author.id %}">Delete author</a>
 {% endblock %}

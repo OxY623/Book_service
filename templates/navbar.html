@@ -1,3 +1,4 @@
+{% load static %}
 <nav>
     <ul>
         <li><a href="{% url 'books-list' %}">View All Books</a></li>
@@ -7,6 +8,6 @@
     </ul>
     <form action="{% url 'search' %}" method="get">
         <input type="text" name="query" placeholder="Search by book or author" required>
-        <button type="submit">Search</button>
+        <button class="btn_red" type="submit">Search</button>
     </form>
 </nav>
