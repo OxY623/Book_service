@@ -4,6 +4,7 @@ from .forms import BookForm, AuthorForm
 
 
 def main_view(request):
+    # Представление для главной страницы
     books_count = Book.objects.count()
     authors_count = Author.objects.count()
     context = {
@@ -14,6 +15,7 @@ def main_view(request):
 
 
 def books_list(request):
+    # Представление для списка книг
     books = Book.objects.all()
     context = {
         'books': books
@@ -22,6 +24,7 @@ def books_list(request):
 
 
 def authors_list(request):
+    # Представление для списка авторов
     authors = Author.objects.all()
     context = {
         'authors': authors
@@ -30,6 +33,7 @@ def authors_list(request):
 
 
 def add_book(request):
+    # Представление для добавления новой книги
     if request.method == 'POST':
         form = BookForm(request.POST)
         if form.is_valid():
@@ -42,6 +46,7 @@ def add_book(request):
 
 
 def create_author(request):
+    # Представление для создания нового автора
     if request.method == 'POST':
         form = AuthorForm(request.POST)
         if form.is_valid():
@@ -52,7 +57,9 @@ def create_author(request):
     context = {'form': form}
     return render(request, 'create_author.html', context)
 
+
 def edit_book(request, book_id):
+    # Представление для редактирования книги
     book = get_object_or_404(Book, id=book_id)
     if request.method == 'POST':
         form = BookForm(request.POST, instance=book)
@@ -64,12 +71,16 @@ def edit_book(request, book_id):
     context = {'form': form, 'book': book}
     return render(request, 'edit_book.html', context)
 
+
 def book_detail(request, book_id):
+    # Представление для деталей книги
     book = get_object_or_404(Book, id=book_id)
     context = {'book': book}
     return render(request, 'book-detail.html', context)
 
+
 def author_detail(request, author_id):
+    # Представление для деталей автора
     author = get_object_or_404(Author, id=author_id)
     books = author.book_set.all()
     context = {
@@ -80,6 +91,7 @@ def author_detail(request, author_id):
 
 
 def edit_author(request, author_id):
+    # Представление для редактирования автора
     author = get_object_or_404(Author, id=author_id)
 
     if request.method == 'POST':
@@ -98,6 +110,7 @@ def edit_author(request, author_id):
 
 
 def delete_author(request, author_id):
+    # Представление для удаления автора
     author = get_object_or_404(Author, id=author_id)
 
     if request.method == 'POST':
@@ -111,6 +124,7 @@ def delete_author(request, author_id):
 
 
 def delete_book(request, book_id):
+    # Представление для удаления книги
     book = get_object_or_404(Book, id=book_id)
 
     if request.method == 'POST':
