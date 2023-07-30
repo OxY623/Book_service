@@ -26,5 +26,5 @@ A compact web service that allows you to work with authors and books.
 Шаг 5: Запуск сервера разработки
 
 Запустите сервер разработки Django с помощью команды: python manage.py runserver
-Проверьте, что сервер работает, перейдя веб-браузере на адрес http://localhost:8000.
+Проверьте, что сервер работает, перейдя веб-браузере Google Chrome  на адрес http://localhost:8000.
 Теперь ваш существующий проект Django должен быть успешно запущен на вашей локальной машине.
