@@ -4,25 +4,28 @@
 <html>
 <head>
     <title>{% block title %}Service books{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    {% block link %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    {% endblock %}
 </head>
 <body>
-    <header>
-        <a href="{% url 'home' %}"><h1>Service books.</h1></a>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-        {% block link %}<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">{%  endblock %}
-    </header>
+<header>
+    <a href="{% url 'home' %}"><h1>Service books.</h1></a>
 
-    {% include "navbar.html" %}
+</header>
 
-    <main>
-        {% block content %}
-        <h2></h2>
-        <p>Текст контента</p>
-        {% endblock %}
-    </main>
+{% include "navbar.html" %}
 
-    <footer>
-        <p>© 2023 Service Books. All rights reserved.</p>
-    </footer>
+<main>
+    {% block content %}
+    <h2></h2>
+    <p>Текст контента</p>
+    {% endblock %}
+</main>
+
+<footer>
+    <p>© 2023 Service Books. All rights reserved.</p>
+</footer>
 </body>
 </html>

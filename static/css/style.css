@@ -154,6 +154,7 @@ a:hover {
     color: white;
 }
 .btn_delete{
+    margin-top: 20px;
     padding: 10px;
     font-size: 16px;
     border-radius: 3px;
@@ -161,7 +162,10 @@ a:hover {
     color: #fff;
     border: none;
     cursor: pointer;}
+
+
 .btn_edit{
+    margin-top: 20px;
     padding: 10px;
     font-size: 16px;
     border-radius: 3px;
@@ -169,3 +173,6 @@ a:hover {
     color: #fff;
     border: none;
     cursor: pointer;}
+div{
+    margin-top: 20px;
+}
